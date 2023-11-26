@@ -17,7 +17,7 @@ Conversion flags - !r !s !a
 
 variavel = 'ABC'
 print(f'{variavel}')
-print(f'{variavel: >10}')
+print(f'{variavel: >10}') # pad (largura fixa da string)
 print(f'{variavel: <10}.')
 print(f'{variavel:*^10}')
 print(f'{1000.4873648123746:0=+10,.1f}')

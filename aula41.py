@@ -8,7 +8,8 @@ while i < len(string):
     letra = string[i]
 
     if letra == ' ':
-        break
+        i += 1
+        continue
 
     print(letra)
     i += 1

@@ -5,9 +5,16 @@ print(frase.count('Python'))
 i = 0
 qtd_apareceu_mais_vezes = 0
 letra_apareceu_mais_vezes = ''
+letra_repetida = ''
 
 while i < len(frase):
     letra_atual = frase[i]
+    
+    if letra_atual in letra_repetida:
+        i += 1
+        continue
+    else:
+        letra_repetida += letra_atual
 
     if letra_atual == ' ':
         i += 1
