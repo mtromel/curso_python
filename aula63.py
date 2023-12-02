@@ -31,8 +31,8 @@ import sys
 #     .replace('-', '')
 entrada = input('CPF [746.824.890-70]: ')
 cpf_enviado_usuario = re.sub(
-    r'[^0-9]',
-    '',
+    r'[^0-9]', # substituir tudo que não for um número
+    '',        # por nada
     entrada
 )
 

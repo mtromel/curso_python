@@ -44,8 +44,8 @@ for digito in cpf:
 
 resto_1 = (soma_1 * 10) % 11
 resto_2 = (soma_2 * 10) % 11
-primeiro_digito = resto_1 if resto_1 < 9 else 0
-segundo_digito = resto_2 if resto_2 < 9 else 0
+primeiro_digito = resto_1 if resto_1 <= 9 else 0
+segundo_digito = resto_2 if resto_2 <= 9 else 0
 
 print('Primeiro dígito: ', primeiro_digito, 'Segundo dígito: ', segundo_digito)
 

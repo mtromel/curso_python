@@ -1,4 +1,5 @@
 '''
+Vídeo 108 e 109
 Escopo de funções em Python
 Escopo significa o local onde aquele código pode atingir
 Existe o escopo global e local
@@ -11,7 +12,7 @@ A palavra global faz uma variavel de escopo externo ser a mesmo no escopo intern
 x = 1
 
 def escopo():
-    global x
+    global x # é uma má prática de programação permitir que uma variável global seja manipulada dentro de uma função
     x = 10
 
     def outra_funcao():

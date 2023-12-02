@@ -39,7 +39,7 @@ for digito in cpf:
 
 resto = (soma * 10) % 11
 
-primeiro_digito = resto if resto < 9 else 0
+primeiro_digito = resto if resto <= 9 else 0
 
 print('Primeiro dígito: ', primeiro_digito)
 
