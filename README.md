@@ -7,46 +7,96 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
     Posso simplesmente passar o argumento o interpretador Python já irá reconhecer qual o tipo de argumento que está sendo enviado.
 
 ## Conceitos
-Docstring   -   usada para documentar o código. É iniciada e terminada por um conjunto de três aspas simples ou duplas. Pode conter 
+* Docstring   -   usada para documentar o código. É iniciada e terminada por um conjunto de três aspas simples ou duplas. Pode conter 
                 várias linhas. O interpretador Python lê o conteúdo e guarda em memória, mas não tenta executar o conteúdo.
 
-Comentário  -   começa com um # e só pode conter uma linha apenas. O interpretador Python ignora o que está depois do #, não lê e
+* Comentário  -   começa com um # e só pode conter uma linha apenas. O interpretador Python ignora o que está depois do #, não lê e
                 nem armazena em memória. Pode ser usado antes de uma linha de código, ao lado do código (no final), ou abaixo.
 
-String      -   é um texto. Pode ser inserido entre aspas simples ou duplas. Ex.: "Texto" ou 'Texto'
+* String      -   é um texto. Pode ser inserido entre aspas simples ou duplas. Ex.: "Texto" ou 'Texto'
 
-Aspas       -   Posso usar em uma string aspas simples dentro de aspas duplas ou o contrário também, aspas duplas dentro de 
+* Aspas       -   Posso usar em uma string aspas simples dentro de aspas duplas ou o contrário também, aspas duplas dentro de 
                 aspas simples. Dessa forma pode ser dispensado o uso de caractere de escape.
 
-Conversão de tipos / Coerção:
-            -   É o ato de converter um tipo em outro. O mesmo que "type conversion", 'typecasting" e "coercion"
+* Conversão de tipos / Coerção
+              -   É o ato de converter um tipo em outro. O mesmo que "type conversion", 'typecasting" e "coercion"
 
-Tipos primitivos e imutáveis:
-            -   str, int, float e bool
+* Tipos primitivos e imutáveis 
+              - str, int, float e bool
 
-Variáveis   -   São usadas para salvar algo na memória do computador. Para tornar o código mais legível e evitar
+* Variáveis   -   São usadas para salvar algo na memória do computador. Para tornar o código mais legível e evitar
                 repetir código. Inicie sempre com letras minúsculas, depois pode usar números e underline.
 
-Constantes  -   Por convenção as constantes são escritas com todas as letras maiúsculas em Python. Porém a linguagem
+* Constantes  -   Por convenção as constantes são escritas com todas as letras maiúsculas em Python. Porém a linguagem
                 não impede que seja atribuido um novo valor a uma constante em outra parte do programa porque para
                 Python é uma variável. A convenção serve para que os programadores entendam que aquele valor não deve
                 ser alterado depois de ser declarado.
 
-Precedência de operadores:
-            -   1° Parenteses de dentro para fora
-                2° Exponenciação
-                3° Multiplicação, divisão, divisão inteira, módulo
-                4° Soma e subtração
+* Precedência de operadores:             
+              1) Parenteses de dentro para fora; 2) Exponenciação; 3) Multiplicação, divisão, divisão inteira, módulo; 4) Soma e subtração;
 
-Objeto      -   Pode executar algumas ações. Essas ações são chamadas de métodos.
+* Objeto      -   Pode executar algumas ações. Essas ações são chamadas de métodos.
 
-Parâmetro   -   Dentro da função, quando estou me referindo ao nome da variável, isso é chamado de parâmetro.
+* Parâmetro   -   Dentro da função, quando estou me referindo ao nome da variável, isso é chamado de parâmetro.
 
-Argumento   -   Dentro da função, quando estou me referindo ao valor da variável, isso é chamado de argumento.
+* Argumento   -   Dentro da função, quando estou me referindo ao valor da variável, isso é chamado de argumento.
 
-Método      -   Quando uma função está dentro de um objeto é chamada de método.
+* Método      -   Quando uma função está dentro de um objeto é chamada de método.
 
-Iterável    -   É algo que pode ser navegado item por item utilizando índices, tanto positivos quanto negativos.
+* Iterável    -   É algo que pode ser navegado item por item utilizando índices, tanto positivos quanto negativos.
+
+* Loop infinito
+            -   Quando um código não tem fim. É um erro de programação.
+
+* Iterador    -   Quem sabe entregar um valor por vez
+
+* Lista       -   Suporta vários valores de qualquer tipo.
+
+* Desempacotamento
+            -   extrair os valores de uma lista ou tupla e armazenas em diversas variáveis (uma variável para cada índice
+                da lista ou tupla). Pode ser usado o '*' nas chamadas de métodos e funções para desempacotar.
+
+* Tupla       -   é uma 'lista' imutável. É um pouco mais eficiente que uma lista.
+
+* Operação ternária
+            -   Similar ao if, mas é escrito em uma única linha. Pode ter várias condições, pode usar os operadores and, or,
+                not. Sintaxe: <valor_se_condição_for_verdadeira> if <condição> else <outro_valor_se_condição_for_falsa>
+
+* Funções     -   São trechos de código usados para replicar determinada ação ao longo do código. Podem receber valores para
+                parâmetros (argumentos) e retornar um valor específico. Por padrão as funções em Python retornam None.
+
+* Argumento   -   É o valor informado a ser enviado para a função que o recebe como parâmetro. Argumentos podem ser nomeados
+                ou não nomeados (ou posicionais). Argumento nomeado tem o nome do parâmetro seguido por sinal de igual junto
+                com o nome (não pode ter espaços). Argumento não nomeado, ou posicional, recebe apenas o argumento (valor), mas 
+                esse precisa ser enviado na posição correta. É possível usar argumentos posicionais junto com nomeados, mas a
+                partir do nomeado todos que vierem depois dele precisam ser nomeados. Os argumentos nomeados podem estar em
+                qualquer posição em relação aos parâmetros da função, não precisam estar na mesma ordem criada na função.
+
+* Parâmetro   -   São os parâmetros que esperamos receber como argumentos na chamada da função. Os parâmetros podem ter um valor
+                padrão. Caso o valor não seja enviado na chamada da função o valor padrão será usado. Caso seja enviado um
+                valor na chamada da função o valor padrão é ignorado.
+
+* Refatorar   -   editar ou reescrever o código.
+
+* Escopo      -   Significa o local onde aquele código pode alcançar. Existe o escopo global e local:
+                Escopo global - é o escopo onde todo código é alcançavel.
+                Escopo local - é o escopo onde apenas nomes do mesmo local podem ser alcançados. Não temos acesso a nomes
+                de escopos internos nos escopos externos, mas o contrário é possível.
+
+* Higher Order Functions
+            -   Funções que podem receber ou retornar outras funções.
+
+* First-Class Functions
+            -   Funções que são tratadas como outros tipos de dados comuns (str, int, etc...)
+
+* Closure     -   É quando uso uma variável para salvar uma execução parcial (um escopo) de uma função e a uso com uma função
+                para concluir a execução da função principal.
+
+* Dicionários -   São estruturas de dados do tipo 'Chave' e 'Valor'. Chaves podem ser consideradas como índices e podem ser de
+                tipos imutáveis como str, int, float, bool, tuple, etc. O valor pode ser de qualquer tipo, incluindo outro 
+                dicionário. Usa-se as {} ou a classe dict() para criar dicionários.
+
+
 
 ## Comandos
 
@@ -93,5 +143,43 @@ Iterável    -   É algo que pode ser navegado item por item utilizando índices
 |         | diferentes para cada erro possível de try.                                                                   |
 | \       | Pode ser usado para quebra uma linha de código e continuar escrevendo na linha de baixo                      |
 | id()    | Função que mostra a identidade do elemento na memória.                                                       |
+| while() | Executa um bloco de códigos enquanto uma condições for verdadeira                                            |
+| for()   | Laço de repetição usado quando se sabe exatamente quantas repetições devem ocorrer.                          |
+| range() | Usado para criar um range. Sintaxe: range(star, stop, step)                                                  |
+| next()  | Função que entrega o proximo valor de um iterável.                                                           |
+| iter()  | Função que retorna o iterador de um iterável.                                                                |
+| append()| Método de list. Adiciona um item no final da lista.                                                          |
+| insert()| Método de list. Adiciona um item no índice escolhido.                                                        |
+| pop()   | Método de list. Remove do final (se o índice for omitido) ou do índice escolhido.                            |
+| del()   | Método de list. Apaga um índice.                                                                             |
+| clear() | Método de list. Limpa a lista inteira.                                                                       |
+| extend()| Método de list. Faz um cópia de uma lista para dentro de outra lista.                                        |
+| +       | Concatena duas listas dentro de outra lista.                                                                 |
+| copy()  | Método de list. Faz a cópia de uma lista para outra posição da memória, criando uma lista independente.      |
+| enumerate() | Enumera iteráveis.                                                                                       |
+| round() | Arredonda a casa decimal. Retorna um float, omite os zeros à direita depois da virgula.                      |
+| split() | Divide uma string. Por padrão divide nos espaços. Posso informar qualquer outro caracter para dividir a      |
+|         | string. O caracter escolhido não vai ser inserido na lista.                                                  |
+| strip() | Corta os espaços no começo e no fim da string.                                                               |
+| rstrip()| Corta os espaços da direita da string.                                                                       |
+| lstrip()| Corta os espaços da esquerda da string.                                                                      |
+| join()  | Une strings, listas, tuplas. Apenas iteráveis.                                                               |
+| def     | Usado para definir uma nova função. Sintaxe: def nome_da_função(parâmetros)                                  |
+| global  | Faz uma variável de escopo externo ser a mesma no escopo interno. Com isso é possível mudar o valor da       |
+|         | variável do escopo externo no escopo interno.                                                                |
+| return  | Faz o retorno de um valor de uma função ao objeto que chamou a função.                                       |
+| args    | Termo que pode ser usado como parâmetro de uma função. Permite que a função receba vários argumentos como    |
+|         | uma lista ou tupla.                                                                                          |
+| *args   | Empacota ou desempacota os argumentos recebidos. O '*' também pode ser usado com variáveis para desempacotar |
+| 
+
+
+
+## Cuidados e alertas ao programar em Python
+
+* Listas são mutáveis, por isso é preciso tomar cuidado. O operador de atribuição '=' não faz uma cópia dos dados da lista
+    para outra posição de memória, assim como faz com variáveis de tipos imutáveis. Com as listas o '=' apenas aponta a
+    lista nova para a posição de memória onde o conteúdo da lista original está armazenado. Isso quer dizer que qualquer 
+    alteração nesse conteúdo em uma das listas vai afetar as duas listas. É possível evitar isso usando o método copy().
 
 
