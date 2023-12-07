@@ -22,6 +22,8 @@
 #     ]
 # }
 # pessoa = dict(nome='Luiz Otávio', sobrenome='Miranda')
+
+
 pessoa = {
     'nome': 'Luiz Otávio',
     'sobrenome': 'Miranda',
@@ -101,3 +103,53 @@ for chave, valor in pessoa.items():
 
 pessoa1.setdefault('idade', 0)
 print(pessoa1['idade'])
+
+# video aula 122
+
+import copy
+
+d1 = {
+    'c1' : 1,
+    'c2' : 2,
+    'l1' : [0, 1, 2],
+}
+
+# d2 = d1.copy() # dessa forma faz uma cópia rasa. Na copia rasa a alteração na lista l1 feita abaixo afeta os dois dicts
+d2 = copy.deepcopy(d1) # aqui usa o módulo copy importado acima e faz uma cópia profunda.
+
+d2['c1'] = 1000
+d2['l1'][1] = 999999
+print(d1)
+print(d2)
+
+# video aula 123
+
+p1 = {
+    'nome' : 'Luiz',
+    'sobrenome' : 'Miranda'
+}
+
+# print(p1['nome'])
+# print(p1.get('nome', 'Não exite'))
+
+# nome = p1.pop('nome') # pop apaga a chave 'nome' do dicionário p1, mas salva o valor na variável nome.
+# print(nome)
+# print(p1)
+
+# ultima_chave = p1.popitem() # popitem apaga a última chave do dicionário p1, mas salva como uma tupla na variável.
+# print(ultima_chave)
+# print(p1)
+
+# p1.update({
+#     'nome': 'novo valor', # update atualiza o valor da chave nome e também insere uma nova chave valor.
+#     'idade': 30,
+# })
+
+# p1.update(nome='novo valor', idade=30) # também pode ser usado o update passando argumentos nomeados e ele faz o mesmo que acima.
+
+# outra forma de usar o update é passando uma lista ou tupla com os dados a serem atualizados
+tupla = (('nome', 'novo valor'), ('idade', 30))
+lista = [['nome', 'novo valor'], ['idade', 30]]
+# p1.update(tupla)
+p1.update(lista)
+print(p1)
