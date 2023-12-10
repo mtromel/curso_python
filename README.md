@@ -96,6 +96,9 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
                 tipos imutáveis como str, int, float, bool, tuple, etc. O valor pode ser de qualquer tipo, incluindo outro 
                 dicionário. Usa-se as {} ou a classe dict() para criar dicionários.
 
+* Set       -   Tipo de dados set. São conjuntos. Tipo de dados mutável. Aceitam apenas tipos imutáveis como valor interno
+                (não aceitam valores mutáveis como listas e dicionários). Não garante a ordem dos valores armazenados. São eficientes para remover valores duplicados de iteráveis Seus valores sempre serão únicos. Não tem indexes. São iteráveis.
+
 
 
 ## Comandos
@@ -137,7 +140,7 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 | [i:f:p] | Fatiamento de strings. Usa-se para fazer o fatiamento de uma string onde i=início, f=fim e p=passo. Se i for |
 |         | omitido o Python entende que deve pegar desde a posição 0 da string. Se f for omitido que deve pegar até o   |
 |         | final da string e p se for omitido assume o padrão que é 1. Também pode-se usar indices ou passos negativos  |
-| len()   | Função que conta os caracteres de uma string ou de uma fatia de string.                                      |
+| len()   | Função que conta os caracteres de uma string ou de uma fatia de string, ou de registros em um dicionario     |
 | try     | Tenta executar um bloco de códigos que estiver indentado nele. Se não conseguir usar vai procurar o except   |
 | except  | Se ocorrer um erro na execução de try, executa o código indentado nele. Podem ser especificadas ações        |
 |         | diferentes para cada erro possível de try.                                                                   |
@@ -171,7 +174,30 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 | args    | Termo que pode ser usado como parâmetro de uma função. Permite que a função receba vários argumentos como    |
 |         | uma lista ou tupla.                                                                                          |
 | *args   | Empacota ou desempacota os argumentos recebidos. O '*' também pode ser usado com variáveis para desempacotar |
-| 
+| keys()  | Método de dict. Iterável com as chaves                                                                       |
+| values()| Método de dict. Iterável com os valores                                                                      |
+| items() | Método de dict. Iterável com chaves e valores                                                                |
+| setdefault() | Método de dict. Adiciona valores se a chave não existir. Se a chave existir retorna o valor dela        |
+| copy()  | Médodo de dict. Retorna uma cópia rasa (shallow copy)                                                        |
+| get()   | Método de dict. Obtém uma chave                                                                              |
+| pop()   | Método de dict. Apaga um item com a chave especificada (del)                                                 |
+| popitem() | Método de dict. Apaga o último item adicionado                                                             |
+| update()| Método de dict. Atualiza um dicionário com outro                                                             |
+| set()   | Tipo de dados mutáveis. Cria um conjunto. Se enviar uma string vai iterar sobre ela e armazenar as letras    |
+|         | separadas                                                                                                    |
+| add()   | Método de set. Adiciona um valor ao conjunto. Só pode adicionar um valor de cada vez. Se enviar como valor   |
+|         | uma string, add vai armazenar no conjunto a string inteira.                                                  |
+| update()| Método de set. O mesmo que add mas aceita enviar vários valores separados por vírgula de uma vez. Assim como |
+|         | set, se enviar uma string sozinha ele vai iterar sobre ela. Se enviar a string junto com outros valores ele  |
+|         | vai armazenar a string inteira, assim como add.                                                              |
+| clear() | Método de set. Limpa o set                                                                                   |
+| discard()| Método de set. Descarta o valor informado.                                                                  |
+| "\|"     | Operador de set. Operador de união. Une dois sets descartando os valores duplicados.                         |
+| "&"     | Operador de set. Operador de intersecção. Retorna apenas os números presentes em ambos os sets               |
+| "-"     | Operador de set. Operador de diferença. Retorna apenas os itens únicos presentes apenas no set da esquerda   |
+| "^"     | Operador de set. Operador de diferença simétrica. Retorna apenas os itens únicos dos dois sets.              |
+| lambda  | Função anônima (que não tem nome) que contêm apenas uma linha. Sintaxe: lambda <parametro>: <retorno>        |
+
 
 
 
