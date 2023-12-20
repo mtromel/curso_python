@@ -143,6 +143,24 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
                 Ou então podemos importar os módulos dentro de __init__ e então os objetos podem ser acessados assim:
                     pasta.objeto
 
+* variáveis livres
+            -   São variáveis definidas fora do escopo de uma função interna
+
+* Funções decoradoras
+            -   São funções que decoram outras funções. São factory functions
+
+* Decorar   -   Significa Adicionar, Remover, Restringir, Alterar
+
+* Decoradores
+            -   São usados para fazer o Python usar as funções decoradoras em outras funções. São 'Sintax Sugar'.
+                A ordem de execução dos decoradores é de baixo para cima (a linha mais próxima da função decorada é
+                executada primeiro, depois a de cima).
+                Ex.: @função_decoradora acima da definição da função que quero decorar.
+
+* Função zipper
+            -   Função usada para unir duas listas. Esse é um nome de convenção, essa função pode ter qualquer nome.
+
+
 ## Comandos
 
 | Comando | Descrição e exemplos                                                                                         |
@@ -258,7 +276,18 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 | yield   | Gera uma pausa na execução da função generator, retornando o resultado informado após o comando.             |
 | yield from| Permite chamar outro generator antes de executar o restante do código desse generator                      |
 | reload  | Método da biblioteca padrão do Python importlib. Usado para recarregar um módulo importado.                  |
-|
+| __code__.co_freevars | Mostra as variáveis livres desse escopo. Sintaxe: funcao.__code__.co_freevars                   |
+| locals() | Mostra as variaveis locais desse escopo                                                                     |
+| nonlocal | Comando que torna possível o Python manipular uma variável livre. Sintaxe: nonlocal variável                |
+| zip()   | Função padrão do Python que faz a união de duas listas na ordem se baseando pela lista menor.                |
+| zip_longest() | Função do módulo intertools do Python. Faz a união de duas listas na ordem se baseando pela lista      |
+|         | maior. Os valores ausentes da lista menor são preenchidos com None. Posso usar fillvalue= para personalizar  |
+|         | o texto no lugar de None.                                                                                    |
+| min()   | Função que retorna o menor valor de um range. Se usado com len(lista) retorna o menor número de indice       |
+|         | das duas listas (a menor lista).                                                                             |
+| max()   | Função que retorna o maior valor de um range. Se usado com len(lista) retorna o maior número de indice       |
+|         | das duas listas (a maior lista)                                                                              |
+| 
 
 
 
