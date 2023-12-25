@@ -1,5 +1,5 @@
 '''
-video aula 169
+video aula 169 e 170
 Exercício - unir listas
 Crie uma função zipper (como o zipper de roupas)
 O trabalho dessa função será unir duas listas na ordem.

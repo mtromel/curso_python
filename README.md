@@ -130,17 +130,17 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
             -   from nome_do_modulo import *  ->  má prática de programação. Pode causar confusão com os nomes das variáveis
                     já que não é possível enxergar o que está sendo importado.
 
-* __main__  -   É o módulo principal. O Python sempre vai considerar o módulo atual como __main__
+* --main__  -   É o módulo principal. O Python sempre vai considerar o módulo atual como --main__
                 O Python conhece todos os módulos e pacotes (pastas) presentes nos caminhos do sys.path. Também todas as 
-                pastas e módulos que estão abaixo do __main__
+                pastas e módulos que estão abaixo do --main__
 
 * import    -   Faz a importação de módulos em Python. Só carrega uma vez o módulo. Se precisar carregar novamente durante
-                uma mesma execução do __main__ precisar umar importlib.reload.
+                uma mesma execução do --main__ precisar umar importlib.reload.
 
-* __init__  -   Se nomear um módulo com essa descrição a pasta onde esse módulo está inserido poderá ser usada como se fosse
+* --init__  -   Se nomear um módulo com essa descrição a pasta onde esse módulo está inserido poderá ser usada como se fosse
                 um modulo. Nesse caso poderia acessar um objeto que está dentro de um módulo dessa pasta assim:
                     pasta.modulo.objeto
-                Ou então podemos importar os módulos dentro de __init__ e então os objetos podem ser acessados assim:
+                Ou então podemos importar os módulos dentro de --init__ e então os objetos podem ser acessados assim:
                     pasta.objeto
 
 * variáveis livres
@@ -159,6 +159,14 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 
 * Função zipper
             -   Função usada para unir duas listas. Esse é um nome de convenção, essa função pode ter qualquer nome.
+
+* Ambientes Virtuais    -   Um ambiente virtual carrega toda a sua instalação do Python para uma pasta no caminho escolhido.
+                        Ao instalar um ambiente virtual, a instalação do ambiente virtual será usada. Podemos dar qualquer
+                        nome para o ambiente virtual mas os mais usados são: venv, env, .venv, .env
+                        Para criar o ambiente virtual digite no powershell: python -m venv nome_do_ambiente_virtual
+
+* Interpretador Python  -   Posso escolher qual o interpretador Python quero usar. Para isso, no VSCode posso selecionar
+                        na barra inferior do lado direito qual a versão.
 
 
 ## Comandos
@@ -210,8 +218,8 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 | finally | Pode ser usado com Try, com ou sem except. Sempre será executado.                                            |
 | Exception| É uma classe superior de excessões. Qualquer erro que não esteja sendo explicitamente tratado cai aqui se   |
 |         | for usada com uma except.                                                                                    |
-| __class__ | Método de exceptions. Mostra a mensagem de erro padrão do Python para aquele erro.                         |
-| __name__ | Método de exceptions. Mostra o nome da exception. Posso usar esses métodos com um alias para apresentar os  |
+| --class__ | Método de exceptions. Mostra a mensagem de erro padrão do Python para aquele erro.                         |
+| --name__ | Método de exceptions. Mostra o nome da exception. Posso usar esses métodos com um alias para apresentar os  |
 |         | dados do erro na tela ou em um aquivo de log de forma personalizada.                                         |
 | raise   | Usado para lançar erros (fazer com que mesmo sendo tratados eles sejam exibidos). Também pode ser usado para |
 |         | personalizar a mensagem de erro padrão daquele erro.                                                         |
@@ -276,7 +284,7 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 | yield   | Gera uma pausa na execução da função generator, retornando o resultado informado após o comando.             |
 | yield from| Permite chamar outro generator antes de executar o restante do código desse generator                      |
 | reload  | Método da biblioteca padrão do Python importlib. Usado para recarregar um módulo importado.                  |
-| __code__.co_freevars | Mostra as variáveis livres desse escopo. Sintaxe: funcao.__code__.co_freevars                   |
+| --code__.co_freevars" | Mostra as variáveis livres desse escopo. Sintaxe: funcao.--code__.co_freevars                   |
 | locals() | Mostra as variaveis locais desse escopo                                                                     |
 | nonlocal | Comando que torna possível o Python manipular uma variável livre. Sintaxe: nonlocal variável                |
 | zip()   | Função padrão do Python que faz a união de duas listas na ordem se baseando pela lista menor.                |
@@ -287,7 +295,24 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 |         | das duas listas (a menor lista).                                                                             |
 | max()   | Função que retorna o maior valor de um range. Se usado com len(lista) retorna o maior número de indice       |
 |         | das duas listas (a maior lista)                                                                              |
-| 
+| gcm     | Não é comando do Python, é um comando do powershell. É útil para identificar o caminho do path de onde está  |
+|         | o Python instalado. gcm python -Syntax                                                                       |
+| activate | Usado para ativar o ambiente virtual. Sintax no powershell: <caminho>\activate.                             |
+|         | obs.: no Windows o activate fica dentro da pasta Scripts. No linux e no mac fica dentro da pasta bin         |
+| deactivate | Usado para desativar o ambiente virtual.                                                                  |
+| pip     | Comando usado no powershell para manipulação de pacotes do Python:                                           |
+|         | pip install <pacote> - instala pacotes                                                                       |
+|         | pip install <pacote> --upgrade - instala a atualização disponível para o pacote, substituindo a versão atual |
+|         | pip install <pacote> == <versão> - instala o pacote com uma versão específica (anterior).                    |
+|         | pip install -r <caminho>\requirements.txt - instala todos os pacotes listado no txt de uma vez               |
+|         | pip uninstall <pacote> - desinstala pacotes                                                                  |
+|         | pip freeze - lista todos os pacotes instalados nesse ambiente                                                |
+|         | pip freeze > requirements.txt - cria um arquivo txt (padrão é usar o nome 'requirements') na pasta atual com |
+|         |     a lista de todos os pacotes e suas versões instaladas nesse ambiente. Com esse arquivo guardado posso    |
+|         |     excluir o ambiente virtual (apaga também os módulos python e pastas criadas) e usar esse arquivo txt para|
+|         |     recriar o ambiente virtual com os mesmos pacotes e versões usados naquele projeto. Isso economiza espaço |
+|         |     porque não preciso guardar a instalação do python inteira para aquele ambiente.                          |
+|         | pip index versions <pacote> - lista as versões disponíveis para aquele pacote.                               |
 
 
 
