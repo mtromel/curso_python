@@ -1,0 +1,15 @@
+[
+    { "name": "Luiz", "lastname": "Miranda", "age": 22 },
+    { "name": "Maria", "lastname": "Moreira" },
+    { "name": "Helena", "lastname": "Vieira" }
+]
+
+{
+    "name": "Luiz", 
+    "lastname": "Miranda",
+    "age": 22,
+    "adresses": [
+        { "line1": "av. brasil" },
+        { "line1": "av. amapá"}
+    ]
+}

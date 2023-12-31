@@ -82,6 +82,9 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
                 Escopo global - é o escopo onde todo código é alcançavel.
                 Escopo local - é o escopo onde apenas nomes do mesmo local podem ser alcançados. Não temos acesso a nomes
                 de escopos internos nos escopos externos, mas o contrário é possível.
+                Em classes existe o escopo da classe e o escopo do método. Se um atributo for declarado no escopo da classe
+                ela pode ser acessada por qualquer método da classe usando classe.atributo tanto dentro da classe, dos métodos da classe ou na linha decódigo do programa fora da classe. Um argumento de um método pode ser acessado em
+                qualquer outro método usando self. Fora da classe precisa usar a instância da classe no lugar de self.
 
 * Higher Order Functions
             -   Funções que podem receber ou retornar outras funções.
@@ -167,6 +170,37 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 
 * Interpretador Python  -   Posso escolher qual o interpretador Python quero usar. Para isso, no VSCode posso selecionar
                         na barra inferior do lado direito qual a versão.
+
+* Posicional-Only Parameters  -  Representado por /. Tudo antes da barra  deve ser APENAS posiciona. PEP 570.
+
+* Keyword-Only Parameters  -  Representado pelo * sozinho. tudo que vem DEPOIS do * deve ser nomeado. PEP 3102.
+                                Exemplos:   def funcao(param1, param2, *, param3, param4):
+                                Pode ser usado em conjunto com Posicional-Only Parameters:
+                                            def funcao(param1, param2, /, *, param3, param4):
+
+* Classes       -   São moldes para criar novos objetos. Geram novos objetos (também chamados instâncias) que podem ter
+                        seus próprios atributos (dados dentro da classe) e métodos (ações dentro da classe). Os objetos
+                        gerados pela classe podem usar seus dados internos para realizar várias ações. def dentro da classe
+                        não cria uma função, cria um método.
+
+* Hard coded    -   é algo que foi escrito diretamente no código. Ex. nome = 'João'
+
+* Estados de instância  -   um método pode mudar o estado de outro método sem afetar o estado de outra instância da classe.
+
+* Atributos de classe   -   é como uma constante declarada no escopo da classe que pode ser usado por todas as instâncias
+                            usando classe.atributo. Força o Python a usar o valor do atributo da classe. Pode ser declarado
+                            um valor diferente em um método para uma instância usando self.atributo. Esse valor será buscado
+                            antes do valor do atributo na classe. Posso mudar o valor do atributo da classe de qualquer
+                            parte do programa usando classe.atributo
+
+* Convenções de nomes   -   PascalCase  -   todas as palavras iniciam com letras maiúsculas e nada é usado para separá-las.
+                                            Essa é a convenção utilizada para classes em Python. Ex.: MinhaClasse, Classe
+                            camelCase   -   a primeira letra sempre será minúscula e o restante das palavras deverá iniciar
+                                            com letra maiúscula. Essa convenção não é usada em Python. Ex.: minhaFuncao.
+                            snake_case  -   todas as letras são minúsculas e separadas por um underline. Este é o padrão
+                                            usado em Python para definir qualquer coisa que não for uma classe.
+                                            Ex.: minha_variavel, soma, funcao_legal
+                            Os padrões usado em Python são: snake_case para qualquer coisa e PascalCase para classes.
 
 
 ## Comandos
@@ -313,6 +347,21 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 |         |     recriar o ambiente virtual com os mesmos pacotes e versões usados naquele projeto. Isso economiza espaço |
 |         |     porque não preciso guardar a instalação do python inteira para aquele ambiente.                          |
 |         | pip index versions <pacote> - lista as versões disponíveis para aquele pacote.                               |
+| json    | biblioteca do Python. Quando importada para o módulo permite a manipulação de arquivos JSON                  |
+| dump()  | método de json. Faz o dump - "jogar para dentro" do arquivo, salva o arquivo, cria o arquivo se não existir  |
+|         |     usado com with open. Ex.: json.dump(lista, arquivo, ensure_ascii=False, indent=2)                        |
+| ensure_ascii= | parâmetro para ser usado com json.dump. ensure_ascii=False faz com que os caracteres especiais não     |
+|         |     sejam substituídos por padrão ascii no arquivo json                                                      |
+| indent= | parâmetro para ser usado com json.dump. indent=2 faz com que o arquivo json tenha a indentação padrão do     |
+|         |     json, o que facilita a visualização do arquivo                                                           |
+| load()  | método de json. Faz a leitura do arquivo json e salva na lista que for indicada. lista = json.load(arquivo)  |
+| --init__ | Método de classe. É um dos primeiros a ser chamado para inicializar os atributos da classe                  |
+|         |     def --init__(self, param1, param2):                                                                      |
+| self    | convenção de variável de métodos de classe. Referencia à instância da classe. Precisa ser o primeiro         |
+|         |     parâmetro de cada método.                                                                                |
+| --dict__ | método de classes que pode ser usado para listar o conteúdo do dicionário da instância da classe            |
+| vars()  | método de classes que faz o mesmo que --dict__                                                               |
+
 
 
 
@@ -326,3 +375,12 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 * No VsCode, ao digitar ponto depois de um objeto é exibida uma lista dos atributos disponíveis para aquele objeto. 
     Mas essa lista é do VsCode, pode ter divergências com os atributos disponíveis na linguagem, pois é parte da programação
     da IDE.
+
+* Problema com parâmetros mutáveis em Python - Sempre que for criar parâmetros em funções tenho que verificar se o parâmetro
+    é um dado mutável. Se for, não devo colocar valor padrão para esse parâmetro na função. Por exemplo, se um dos parâmetros
+    for uma lista, não informar na definição da função uma lista vazia assim: def funcao(param1, lista=[]):
+    Se fizer assim vai dar problema porque ao chamar a função a primeira vez sem informar a lista o Python cria uma lista no
+    escopo da função. Ao chamar a função novamente para criar outra lista (sem informar a lista) o Python vai mesclar a
+    lista já criada no escopo da função com a nova. Para resolver isso preciso definir o parâmetro como None na definição
+    da função e usar um if para verificar se não foi passado nenhum parâmetro na chamada da função. Assim o Python só vai
+    criar a lista uma vez . Veja arquivo aula118.py e video aula 191
