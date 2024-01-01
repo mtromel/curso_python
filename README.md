@@ -202,6 +202,34 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
                                             Ex.: minha_variavel, soma, funcao_legal
                             Os padrões usado em Python são: snake_case para qualquer coisa e PascalCase para classes.
 
+* Método de classe  -   é um método que usa cls ao invés  de self. Ele recebe a classe ao invés da instância. Criado com o 
+                            decorarador @classmethod.
+
+* Factories method  -   Igual ao método de classe, recebe cls, mas serve para chamar outro método ou a própria classe para 
+                            executar uma ação. Criado com o decorador @classmethod.
+
+* Modificadores de acesso   -   Python não tem modificadores de acesso como em outras linguagens (public, protected, private).
+                                    Por convenção a comunidade definiu que:
+                                        Public -> o nome do atributo ou método é criado sem underline no começo. Pode ser
+                                            usado em qualquer lugar do programa.
+                                        Protected -> o nome do atributo ou método começa com um underline. Não deve ser 
+                                            usado fora da classe ou da subclasse.
+                                        Private -> o nome do atributo ou método começa com dois underline. Só deve ser usado
+                                            na classe em que foi declarado.
+* Name mangling -   desfiguração do nome. O Python desfigura o nome do atributo ou método que comça com dois underline. O
+                        nome desfigurado fica assim: _NameClass__NameAttributeOrMethod
+
+* Modo Pythônico    -   modo do Python de fazer as coisas.
+
+* Código cliente    -   é o código que usa o seu código.
+
+* Getter    -   é um método para obter um atributo. Criado com o decorator @property
+
+* Setter    -   é um método para setar o valor de um atributo. O método é criado usando @nome_do_getter.setter.
+                    veja módulo aula132.py e video aula 213
+
+
+
 
 ## Comandos
 
@@ -361,6 +389,14 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 |         |     parâmetro de cada método.                                                                                |
 | --dict__ | método de classes que pode ser usado para listar o conteúdo do dicionário da instância da classe            |
 | vars()  | método de classes que faz o mesmo que --dict__                                                               |
+| @classmethod | Decorator para criar método de classe e também factories method.                                        |
+| @staticmethod | Decorador para criar método estático, sem self e sem cls. Não tem acesso nem à instância e nem à       |
+|         | classe. É como uma função, mas fica protegida dentro do escopo da classe. Pode ser usada para indicar que    |
+|         | aquela função é usada com aquela classe porque para chamar ele precisa usar também Class.method()            |
+| @property | Decorador usado para criar uma propriedade do objeto. É um método que se comporta como um atributo. É usada|
+|         | como getter, para evitar quebrar o código cliente, para habilitar o setter e para executar ações ao obter o  |
+|         | atributo.                                                                                                    |
+|
 
 
 
