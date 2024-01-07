@@ -228,6 +228,10 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 * Setter    -   é um método para setar o valor de um atributo. O método é criado usando @nome_do_getter.setter.
                     veja módulo aula132.py e video aula 213
 
+* Relações entre classes:
+            ** Associação   -   É um tipo de relação onde os objetos estão ligados dentro do sistema. Geralmente temos uma     asssociação quando um objeto tem um atributo que referencia outro objeto. Não especifica como um objeto controla o ciclo de vida de outro objeto.
+            ** Agregação    -   É uma especialização de associação entre dois ou mais objetos. Cada objeto terá seu ciclo de    vida independente. Geralmente é uma relação de um para muitos. Os objetos podem viver separadamente, mas pode se tratar de uma relação onde um objeto precisa de outro para fazer determinada tarefa.
+            ** Composição   -   É uma especialização de agregação. Nela quando o objeto "pai" for apagado, todas as referências  aos objetos filhos também serão apagadas.
 
 
 
