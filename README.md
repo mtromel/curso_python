@@ -233,6 +233,48 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
             ** Agregação    -   É uma especialização de associação entre dois ou mais objetos. Cada objeto terá seu ciclo de    vida independente. Geralmente é uma relação de um para muitos. Os objetos podem viver separadamente, mas pode se tratar de uma relação onde um objeto precisa de outro para fazer determinada tarefa.
             ** Composição   -   É uma especialização de agregação. Nela quando o objeto "pai" for apagado, todas as referências  aos objetos filhos também serão apagadas.
 
+Herança simples:    São relações entre classes. Conceitos:
+        -   Herança - é um
+        -   Associção - usa
+        -   Agregação - tem
+        -   Composição - é dono de
+        A classe é um tipo novo que criei. A herança herda todos os métodos que estão dentro daquela classe que estou herdando.
+        A classe da qual as outras herdam é chamada de classe principal, super class, base class, parent class.
+        A classe que herda de outra é chamada de classe filha, sub class, child class, derived class.
+
+Herança múltipla:   Uma classe pode extender várias outras classes, inclusive uma classe que não faz parte daquela família.
+                     Ex.:   Log -> FileLog
+                            Animal -> Mamifero -> Humano -> Pessoa -> Cliente
+                            Cliente(Pessoa, FileLog)  -> esse é um exemplo de herança múltipla.
+
+Mixing: Uma classe que não faz parte daquela família. A convenção é usar a palavra mixin no final do nome da classe. Ex.: LogFileMixin.
+
+Classes abstratas:  Abstract Base Class (ABC). São usadas como contratos para a definição de novas classes. Elas podem forçar outras classes a criarem métodos concretos. Também podem ter métodos concretos por elas mesmas. Classes abstratas com métodos
+abstratos não podem ser instanciadas diretamente. Métodos abstratos devem ser implementados nas subclasses usando @abstractmethod. É possível criar @property, @setter, @classmethod, @staticmethod e @method como abstratos. Para isso é só usar o @abstractmethod como decorador mais interno.
+
+Foo / Bar   -   palavras usadas como placeholder para palavras usadas na programação. Muito usadas em tutoriais, quer dizer que posso mudar onde estão estas palavras para outra qualquer que faça sentido no meu código.
+
+Polimorfismo    -   é o princípio que permite que classes derivadas de uma mesma superclasse tenham métodos iguais (com mesma assinatura) mas comportamentos diferentes.
+
+Assinatura do método    -   é composto pelo nome do método, quantidade e tipo de parâmetros (retorno não faz parte). Veja o princípio de Liskov em SOLID.
+
+SOLID   -   conjunto de principios da programação. __S__ = ; __O__ = ; __L__ = Princípio da substituição de Liskov. Objetos de uma superclasse devem ser substituíveis por objetos de uma subclasse sem quebrar a aplicação; __I__ = ; __D__ = ;
+
+Exceptions  -   Posso criar minhas próprias exceções mas preciso seguir estas orientações: 1) Sempre herdar da classe Exceptions; 2) Colocar a palavra Error ao final do nome da classe de exception. Ex.: MyError
+
+Relançar uma exceção:   É quando uso uma exceção que recebi de outra parte da aplicação e adiciono alguma informação ao texto da exceção e lanço ela novamente. Como receber uma bola e jogar ela para outra pessoa.
+
+Dunder Methods  -   Também chamados de Python Special Methods ou Magic Methods. São usados para que as classes executem ações. Ex.: __lt--(self, other) = self < other; __le--(self, other) = self <= other; __gt--(self, other) = self > other; __ge--(self, other) = self >= other; __eq--(self, other) = self == other; __ne--(self, other) = self != other; __add--(self, other) = self + other; __sub--(self, other) = self - other; __mul--(self, other) = self * other; __truediv--(self, other) = self / other; __neg--(self) = -self; __str--(self) = str; __repr(self) = str.
+
+Context Manager -   Gerenciadores de contexto. É possível implementar os próprios protocolos apenas implementando os dunder methods que o Python vai usar. Para criar um context manager com classes os métodos __enter-- e __exit-- devem ser implementados.
+
+Context Manager com função  -   para usar uma função como context manager preciso importar contexmanager from ContexLib e aplicar o decorador @contextmanager à função. Usar o Try e Finnaly. Não precisa do except para deixar o desenvolvedor tratar os erros.
+
+Duck Typing -   Conceito relacionado com tipagem dinâmica onde o Python não está interessado no tipo, mas se alguns métodos existem no seu objeto para que ele funcione de forma adequada. "Quando vejo um pássaro que caminha como um pato, nada como um pato e grasna como um pato, eu chamo aquele pássaro de pato."
+
+Funções decoradoras e docoradores com classes   -   Ao inves de usar herança de classes posso adicionar o decorador com o nome da função que faz o __repr--
+
+Callable    -   É algo que pode ser executado com parênteses. Ex.: funções e métodos.
 
 
 ## Comandos
@@ -400,7 +442,30 @@ Python é uma linguagem de programação Dinâmica de tipagem forte.
 | @property | Decorador usado para criar uma propriedade do objeto. É um método que se comporta como um atributo. É usada|
 |         | como getter, para evitar quebrar o código cliente, para habilitar o setter e para executar ações ao obter o  |
 |         | atributo.                                                                                                    |
-|
+| help()  | Função nativa do Python. Se colocar o nome de uma classe como parâmetro vai mostrar todos os detalhes dessa  |
+|         | classe, inclusive o mro dela, ou a ordem de resolução pelo Python.                                           |
+| mro()   | Método do Python. Method Resolution Order. É o sistema ou método que o Python usa para buscar um método em   |
+|         |  uma classe. Basicamente segue essa ordem: 1) procura na própria classe, 2) na classe principal e se a classe|
+|         |  principal não herdar de nenhuma outra ele vai procurar no buitins.object, ou seja nos métodos implementados |
+|         |  no Python. Pode-se ver a ordem de resolução de um objeto usando Classe.mro() ou classe.__mro--              |
+| super() | Função que executa o parâmetro usando a classe principal. Não vai procurar o comando na classe filha. É o    |
+|         |  mesmo que escrever Classe.metodo. Mas é recomendado usar super().metodo. Usa sempre a primeira classe que   |
+|         |  está sendo herdada, em caso de herança múltipla, a primeira da esquerda para a direita.                     |
+| @abstractmethod | Decorador que implementa método abstrato. São métodos que não tem corpo, só tem assinatura.          |
+| add_note() | permite adicionar uma nota na exceção que está sendo levantada.                                           |
+| .args   | Mostra os argumentos ou o texto da minha exceção. Ex.: error.args dentro de um print                         |
+| __notes-- | Mostra as notas adicionadas dentro da minha exceção                                                        |
+| raise   | Lança uma exceção e mostra ela na tela interrompendo a execução da aplicação                                 |
+| __repr--(self) | Dunder Method. Normalmente usado para comunicar com os desenvolvedores que vão usar meu código. Sempre|
+|         |  usar o '!r' na fstring de retorno para deixar claro o tipo de dado que espero em cada parâmetro da classe.  |
+|         |  Se a classe tiver o método __str-- implementado vai chamar esse método ao invés de __repr--                 |
+| !s      | pode ser usado numa fstring ao chamar a instância da classe. Isso força a execução do método __str--         |
+| !r      | Força a execução do método __repr-- da classe                                                                |
+| __new-- | Método responsável por criar e retornar o novo objeto. Recebe cls ao invés de self. Deve retornar o novo obj |
+| __init-- | É o método responsável por inicializar a instância. Recebe self. Não deve retornar nada (None)              |
+| __exit-- | Recebe a classe de exceção, a exceção e o traceback. Se ele retornar True a exceção no with será suprimida  |
+| __call-- | Método especial que em classe normais faz a instância de uma classe ser callable.                           |
+| 
 
 
 
