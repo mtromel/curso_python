@@ -276,6 +276,23 @@ Funções decoradoras e docoradores com classes   -   Ao inves de usar herança 
 
 Callable    -   É algo que pode ser executado com parênteses. Ex.: funções e métodos.
 
+Classes decoradoras -   A classe pode ser usada como um decorador da função, fazendo com que outros métodos definidos na classe sejam executados na função.
+
+Metaclasses -   São o tipo das classes. Objeto é uma instância de uma classe. Um classe é uma instância de uma metaclasse (type é uma metaclasse). Veja aula155.py e video aula 247
+
+Documentação de classes -   usa-se """ para abrir a documentação e """ para fechar. Tudo que for colocado entre a abertura e o fechamento aparece em help() ou no VSCode quando pàra o mouse em cima da classe.
+
+Documentação de funções -   similar a documentação de classes. Em funções também pode ser usado: :param X: Numero 1, :type x: int or float, :..., :Return: o que a função retorna, :rtype: tipo retornado.
+
+enum    -   são um conjunto de valores simbólicos (membros) ligados a valores únicos. Podem ser iterados para retornar seus membros canônicos na ordem de definição. enum.Enum é a superclasse para as enumerações
+
+Enumerações -   na programação são usadas em ocasiões onde temos um determinado número de coisas para escolher.
+
+dataclasses -   são syntax sugar para criar classes normais. o módulo dataclasses fornece um decorador e funções para criar métodos como __init--(), __repr--(), __eq--(), entre outros, em classes definidas pelo usuário.
+
+namedtuples -   tuplas imutáveis com nomes para valores. Usadas para criar classes de objetos que serão apenas um agrupamento de atributos, como classes normais sem métodos, ou registros de bases de dados, etc. Deve ser importada de collections. Também pode ser usada como herança em uma classe. Para usar dessa forma deve ser importada de typing.
+
+
 
 ## Comandos
 
@@ -465,8 +482,12 @@ Callable    -   É algo que pode ser executado com parênteses. Ex.: funções e
 | __init-- | É o método responsável por inicializar a instância. Recebe self. Não deve retornar nada (None)              |
 | __exit-- | Recebe a classe de exceção, a exceção e o traceback. Se ele retornar True a exceção no with será suprimida  |
 | __call-- | Método especial que em classe normais faz a instância de uma classe ser callable.                           |
+| frozen  | Método para usar em dataclasses que congela a classe e não aceita mais nenhuma nova instância.               |
+| __post_init-- | Método que pode ser definido na dataclass. É executado logo após o __init-- na criação da instância    |
+| field() | Método de dataclasses. Pode ser usado para inserir valores default (usando default_factory) para inserir     |
+|         |  listas vazias, por exemplo.                                                                                 |
+| fields() | Mostra todos os métodos e como estão configurados na classe.                                                |
 | 
-
 
 
 
