@@ -487,6 +487,56 @@ namedtuples -   tuplas imutáveis com nomes para valores. Usadas para criar clas
 | field() | Método de dataclasses. Pode ser usado para inserir valores default (usando default_factory) para inserir     |
 |         |  listas vazias, por exemplo.                                                                                 |
 | fields() | Mostra todos os métodos e como estão configurados na classe.                                                |
+| datetime | Módulo usado para criação de datas. Permite também a formatação da data e hora. %Y = ano; %m = mês; %d = dia|
+|         |   %H = Hora; %M = minutos; %S = segundos. A partir da hora é opcional informar, se não informado assume o    |
+|         |   valor 0.                                                                                                   |
+| now()   | Função de datetime. Retorna a data/hora atual do sistema                                                     |
+| timezone | Módulo de pytz. Permite configurar qual o timezone usar.                                                    |
+| timestamp | Função de datetime que mostra a data/hora em um float de segundos a partir de 1/1/1990. Adiciona também o  |
+|         |   timezone.                                                                                                  |
+| fromtimestamp | Função de datetime. Converte um timestamp em data/hora.                                                |
+| timedelta | Módulo de datetime. Permite fazer cálculos de datas.                                                       |
+| relativedelta | Módulo de dateutil.relativedelta. Permite o calculo de datas para ser usado em comparações.            |
+| strftime | Função de datetime. Formata a data e retorna um string.                                                     |
+| calendar | Módulo usado para coisas genéricas de calendários e datas. Com calendar é possível saber: # Qual o último   |
+|         |   dia do més; # Qual o nome e número do dia de determinada data; # Criar um calendário.                      |
+| month   | Função de calendar que mostra um calendário na tela do ano e mês solicitado.                                 |
+| monthrange | Função de calendar que retorno do dia da semana do primeiro dia e o último dia do mês.                    |
+| day_name | Função de calendar para mostrar o nome do dia da semana.                                                    |
+| monthcalendar | Função de calendar que mostra um lista de listas das semanas do mês solicitado. Os dias da semana que  |
+|         |   não pertencem aquele mês são mostrados como valor 0.                                                       |
+| locale  | Módulo para internacionalização. Usada para padrões de datas e números de acordo com a lingua/país           |
+| setlocale | Função de locale para configurar o padrão a ser usado.                                                     |
+| getlocale | Função de locale que retorna o padrão atual do sistema operacional.                                        |
+| os      | Módulo para interação com o sistema operacional.                                                             |
+| system  | Função de os para passar um comando para ser executado pelo sistema operacional. Por exemplo 'cls'.          |
+| path    | Função de os que contém funções para trabalhar com caminhos de arquivos em windows, Linux e Mac sem se       |
+|         |   preocupar com as diferenças desses so.                                                                     |
+| listdir | Função de os que pode ser usada para listar os arquivos em um diretório.                                     |
+| join    | Função de path que é usada para compor um caminho. Para Windows precisa colocar "C:\\" como primeiro arg.    |
+| walk    | Função de OS que permite percorrer uma estrutura de diretórios de maneira recursiva. Ele gera uma sequencia  |
+|         |   de tuplas, onde cada tupla possui três elementos: o diretório atual (root); uma lista de subdiretorios (dirs)|
+|         |   e uma lista dos arquivos do diretório atual (files).                                                       |
+| count   | Classe de itertools que gera contadores. Usando a função next com a instância se obtem um contador sequencial|
+| getsize | Função de path para obter o tamanho do arquivo.                                                              |
+| stat    | Função de OS que retorna dados dos arquivos, tal como data de criação, data de modificação, permissões, etc. |
+| st_size | Um dos atributos de stat. Retorna um inteiro com o tamanho do arquivo em bytes.                              |
+| unlink  | Função de OS que apaga definitivamente os arquivos da pasta especificada. Não envia para a lixeira, não tem  |
+|         |   recuperação.                                                                                               |
+| expanduser| Função de path que retorna o diretório 'home' do usuário atual do computador.                              |
+| makedirs| Função de OS para criação de diretórios.                                                                     |
+| exist_ok=| Parâmetro de makedir que verifica se a pasta que está tentando criar já existe. Evita que o programa pare   |
+|         |   pare com uma exceção                                                                                       |
+| shutil  | Módulo para manipulação de arquivos e arvores de diretórios.                                                 |
+| copy    | Função de shutil. Faz a cópia de todos os arquivos e pastas da arvore de diretórios informada.               |
+| rmtree  | Função de shutil. Apaga uma arvore de diretórios recursivamente.                                             |
+| copytree| Função de shutil. Copia uma arvore de diretórios recursivamente.                                             |
+| split   | Função de path. Divide um caminho informado em uma tupla (retorna na primeira posição o caminho e na segunda |
+|         |   posição o nome do arquivo e sua extenção)                                                                  |
+| exists  | Função de path. Verifica se um caminho existe. Retorna um bool.                                              |
+| abspath | Função de path. Retorno um caminho completo.                                                                 |
+| basename| Função de path. Retorna o argumento final do path informado.                                                 |
+| dirname | Funçaõ de path. Retorna o caminho completo do diretório.                                                     |
 | 
 
 
