@@ -441,11 +441,13 @@ namedtuples -   tuplas imutáveis com nomes para valores. Usadas para criar clas
 | json    | biblioteca do Python. Quando importada para o módulo permite a manipulação de arquivos JSON                  |
 | dump()  | método de json. Faz o dump - "jogar para dentro" do arquivo, salva o arquivo, cria o arquivo se não existir  |
 |         |     usado com with open. Ex.: json.dump(lista, arquivo, ensure_ascii=False, indent=2)                        |
+| dumps() | O mesmo que dump(), mas ao invez de jogar em um arquivo joga para uma string que pode ser impressa na tela   |
 | ensure_ascii= | parâmetro para ser usado com json.dump. ensure_ascii=False faz com que os caracteres especiais não     |
 |         |     sejam substituídos por padrão ascii no arquivo json                                                      |
 | indent= | parâmetro para ser usado com json.dump. indent=2 faz com que o arquivo json tenha a indentação padrão do     |
 |         |     json, o que facilita a visualização do arquivo                                                           |
 | load()  | método de json. Faz a leitura do arquivo json e salva na lista que for indicada. lista = json.load(arquivo)  |
+| loads() | O mesmo que load() mas ao inves de ler de um arquivo, lê de uma string                                       |
 | --init__ | Método de classe. É um dos primeiros a ser chamado para inicializar os atributos da classe                  |
 |         |     def --init__(self, param1, param2):                                                                      |
 | self    | convenção de variável de métodos de classe. Referencia à instância da classe. Precisa ser o primeiro         |
