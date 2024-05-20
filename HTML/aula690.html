@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu HTML</title>
+    <style>
+        .vermelho {
+            font-size: 24px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cabeçalho</h1>
+    <p><b>Lorem</b>, <strong>ipsum</strong> <i>dolor</i> <em>sit</em> 
+        <a href="https://www.w3schools.com/tags/tag_a.asp" target="_blank">amet</a> 
+        <img 
+        src="https://live.mdnplay.dev/pt-BR/docs/Web/CSS/object-fit/mdn_logo_only_color.png"
+        alt="Logo da MDN" width="50" height="44">
+        <del>consectetur</del> <ins>adipisicing</ins> <s>elit</s>. <u>Explicabo</u> 
+        <small>quasi</small> ex 2<sup>2</sup> H<sub>2</sub>O quia?<br> 
+        <q cite="https://www.w3schools.com/tags/tag_q.asp">The q tag defines a
+             short quotation. <code>console.log</code> normally insert quotation marks around
+             the quotation</q>
+        Amet <span style="color: red">magni</span> pariatur <span class="vermelho">aliquid</span>, reiciendis alias praesentium dignissimos labore odit distinctio atque voluptate neque
+         fuga veritatis in iure.</p>
+        
+        <pre><code>
+            from argparse import ArgumentParser
+
+            parser = ArgumentParser()
+
+            parser.add_argument(
+                '-b', '--basic',
+                help='Mostra olá mundo na tela',
+                # type=str,  # Tipo do argumento
+                metavar='String',
+                # default='Olá mundo',  # Valor padrão
+                required=False,
+                action='append',  # Recebe o argumento mais de uma vez
+                # nargs='+'  # Recebe mais de um valor
+                )
+
+            parser.add_argument(
+                '-v', '--verbose',
+                help='Mostra logs',
+                action='store_true'  # retorna true se tiver sido chamado
+                )
+
+            args = parser.parse_args()
+
+            if args.basic is None:
+                print('Você não passou o valor de basic')
+                print(args.basic)
+            else:
+                print('O valor de basic: ', args.basic)
+
+            print(args.verbose)
+
+        </code></pre>
+    <div class="vermelho">Eu sou um bloco</div>
+
+</body>
+</html>
