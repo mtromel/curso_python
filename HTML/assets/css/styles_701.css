@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* p, h1 {
+    color: purple;
+}
+
+body div section p,
+body div section h1 {
+    color: darkblue;
+} */
+
+/* .color-red {
+    color: red;
+}
+
+.main-content h2.color-red {
+    font-style: italic;
+    color: red;
+} */
+
+div {
+    color: initial;
+    margin-left: 20px;
+}
+
+/* dessa forma estou sendo bem específico. A div que tem um span entre as filhas não vai aplicar */
+/* .pai > .filha > .filha {
+    color: red;
+} */
+
+/* dessa forma fica mais aberto */
+.pai .filha {
+    color: red;
+}
+
