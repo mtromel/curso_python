@@ -1,0 +1,19 @@
+/* odd aplica em todos os irmãos de indice impar */
+ul li:nth-child(odd) {
+    background-color: rebeccapurple;
+}
+
+/* even aplica em todos os irmãos de indice par */
+ul li:nth-child(even) {
+    background-color: darkturquoise;
+}
+
+/* aqui vai aplicar de 3 em 3 */
+ul li:nth-child(3n) {
+    background-color: darkolivegreen;
+}
+
+/* aqui também vai aplicar de 3 em 3 mas vai começar no índice 5 */
+ul li:nth-child(3n+5) {
+    background-color: darkred;
+}
