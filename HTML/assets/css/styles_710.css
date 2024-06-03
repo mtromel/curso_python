@@ -1,0 +1,23 @@
+/* video aula 710 e 711 */
+
+/* especificidade no css
+1) ID
+2) Classes, atributos e pseudo-classes
+3) Elementos e pseudo-elementos
+
+o atributo style colocado diretamente na tag html tem a maior especificidade
+
+!important colocado dentro das chaves do css força a sempre aplicar. 
+
+Força:  1) !important
+        2) atributo style
+        3) especificidade
+
+*/
+
+/* herança
+
+initial -> ativa a herança
+inherit -> desativa a herança
+
+*/
