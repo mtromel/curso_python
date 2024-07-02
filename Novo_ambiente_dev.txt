@@ -1,0 +1,40 @@
+Preparando ambiente novo para desenvolvimento Python
+
+1) Baixar o python
+
+2) Baixar o vscode
+
+3) Instalar o python
+	marcar o flag de adicionar o python no path do windows
+
+4) Testar instalação do python
+	abrir o PowerShell e digitar o comando:
+		python --version
+	se mostrar a versão do python que acabou de instalar está tudo certo. Se não mostrar reiniciar o computador.
+
+5) Iniciar o PowerShell como administrador
+	executar o comando:
+		Get-ExecutionPolicy que deve retornar Restricted
+	Se o retorno for esse executar:
+		Set-ExecutionPolicy AllSigned -Force
+6) Instalar o VsCode com instalação defaut
+
+7) Instalar as extensões no VsCode
+	Python (Microsoft)
+	Python Debugger (Microsoft)
+	Pylance (Microsoft)
+	Code Runner (Jun Han)
+	Om Theme (omthemes)
+	Material Icon Theme (Philipp Kief)
+
+8) Copiar as configurações do arquivo settings.json que está no GitHub
+
+9) Criar o ambiente virtual
+	python -m venv venv
+
+10) Ativar o ambiente virtual
+	.\venv\Scripts\activate
+
+11) Instalar o requirements.txt
+	pip install -r requirements.txt 
+		arquivo está no github
