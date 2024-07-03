@@ -38,3 +38,9 @@ Preparando ambiente novo para desenvolvimento Python
 11) Instalar o requirements.txt
 	pip install -r requirements.txt 
 		arquivo está no github
+	
+	pip freeze
+		consulta os módulos instalados nesse ambiente
+	
+	pip freeze > requirements.txt
+		atualiza o arquivo requirements.txt com os módulos instalados.
