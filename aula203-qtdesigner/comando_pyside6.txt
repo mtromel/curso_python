@@ -1,0 +1,3 @@
+pyside6-uic .\aula203-qtdesigner\ui\window.ui -o .\aula203-qtdesigner\src\window.py
+            caminho do arquivo ui criado no qtdesigner
+                                                 caminho onde vai salvar o arquivo py

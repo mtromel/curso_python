@@ -1,0 +1,2 @@
+pyinstaller --name="Calculadora" --noconfirm --onefile --add-data='aula202-calculadora/files/;files/' --icon='aula202-calculadora/files/logo.png' --noconsole --clean --log-level=WARN aula202-calculadora/main.py
+            nome do app          s/confirmar um arquivo caminho do icone;onde salva o pacote          qual é o arquivo do icone                   s/ terminal         nivel de logs    mesmo caminho usado para executar o programa no terminal                                                      
