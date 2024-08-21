@@ -1,0 +1,9 @@
+Empacotando os programas
+1) Cada aplicação tem um processo específico. Veja a documentação
+2) pip install pyinstaller
+3) pyinstaller --name="Nome_para_o_aplicativo" --noconfirm --onefile {--add-data} {--icon} --noconsole --clean --log-level=WARN arquivo_main.py
+4) Se o projeto tiver subpastas com imagens e arquivos que a aplicação precisa use o comando abaixo
+	--add-data='caminho_de_origem_dos_arquivos'/;'destino'
+		destino é apenas o nome da pasta que será criada dentro do arquivo compactado do projeto
+5) Para adicionar o ícone na aplicação
+	--icon='caminho_do_arquivo_de_icone'

@@ -1,0 +1,18 @@
+Instalação do Python:
+1) Baixa a última versão de python.org
+2) Executa o instalador
+3) Marca "Use admin privileges..."
+4) Marca "Add python.exe to PATH"
+5) Abrir o PowerShell
+6) Testar se a instalação do Python está correta executando: 
+	python --version
+	Se mostrar a versão instalada do Python está tudo certo, se não mostrar reiniciar o computador e testar novamente. 
+	Se não mostrar ainda assim refazer download e instalação
+7) Fechar o PowerShell e abrir como administrador
+8) Get-ExecutionPolicy
+	o padrão é Restricted
+9) Se for em um computador de usuário:
+	Set-ExecutionPolicy AllSigned -Force
+10) Se for em um computador de desenvolvimento:
+	Set_ExecutionPolicy Unrestricted -Force
+
