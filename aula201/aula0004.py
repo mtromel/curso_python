@@ -12,8 +12,8 @@ QMainWindow e centralWidget
 -> exec
 '''
 import sys
-from PySide6.QtWidgets import (QApplication, QPushButton, QWidget, QGridLayout, 
-                               QMainWindow)
+from PySide6.QtWidgets import (QApplication, QPushButton, QWidget,
+                               QGridLayout, QMainWindow)
 
 app = QApplication(sys.argv)
 window = QMainWindow()
@@ -21,8 +21,10 @@ central_widget = QWidget()
 window.setCentralWidget(central_widget)
 window.setWindowTitle('Minha janela bonita')
 
+
 def slot_example(status_bar):
     status_bar.showMessage('O meu slot foi executado')
+
 
 botao1 = QPushButton('Texto do botão')
 botao1.setStyleSheet('font-size: 80px; color: red;')

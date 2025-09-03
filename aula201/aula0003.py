@@ -11,7 +11,8 @@ Resumo: para que eu tenha varias coisas em uma janela, tenho que ter um
   ter outro layout dentro do layout.
 '''
 import sys
-from PySide6.QtWidgets import QApplication, QPushButton, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout
+from PySide6.QtWidgets import QApplication, QPushButton, QWidget, QGridLayout
+# from PySide6.QtWidgets import QVBoxLayout, QHBoxLayout
 
 app = QApplication(sys.argv)
 

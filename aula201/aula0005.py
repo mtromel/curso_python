@@ -13,8 +13,8 @@ QMainWindow e centralWidget
 '''
 import sys
 from PySide6.QtCore import Slot
-from PySide6.QtWidgets import (QApplication, QPushButton, QWidget, QGridLayout, 
-                               QMainWindow)
+from PySide6.QtWidgets import (QApplication, QPushButton, QWidget,
+                               QGridLayout, QMainWindow)
 
 app = QApplication(sys.argv)
 window = QMainWindow()
@@ -22,21 +22,25 @@ central_widget = QWidget()
 window.setCentralWidget(central_widget)
 window.setWindowTitle('Minha janela bonita')
 
+
 @Slot()
 def slot_example(status_bar):
     def inner():
         status_bar.showMessage('O meu slot foi executado')
     return inner
 
+
 @Slot()
 def outro_slot(checked):
     print('Está marcado?', checked)
+
 
 @Slot()
 def terceiro_slot(action):
     def inner():
         outro_slot(action.isChecked())
     return inner
+
 
 botao1 = QPushButton('Texto do botão')
 botao1.setStyleSheet('font-size: 80px; color: red;')
